@@ -37,7 +37,7 @@ my_library_app/
 
 ### 1️⃣ Clone the repository
 
-git clone https://github.com/your-username/library-management-system.git
+git clone [https://github.com/your-username/library-management-system](https://github.com/pratham07816/Library_Management_System.git)
 cd library-management-system 
 
 2️⃣ Install dependencies
