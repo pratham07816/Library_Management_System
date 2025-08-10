@@ -19,20 +19,6 @@ A simple **Flask + MySQL** based Library Management System with dashboard stats,
 
 ---
 
-## 📂 Project Structure
-
-my_library_app/
-│── app.py # Flask application
-│── templates/
-│ └── index.html # Main frontend HTML
-│── static/
-│ ├── style.css # Stylesheet
-│ └── script.js # Frontend logic
-│── README.md # Project documentation
-
-
----
-
 ## ⚙️ Setup Instructions
 
 ### 1️⃣ Clone the repository
@@ -40,8 +26,12 @@ my_library_app/
 git clone [https://github.com/your-username/library-management-system](https://github.com/pratham07816/Library_Management_System.git)
 cd library-management-system 
 
+---
+
 2️⃣ Install dependencies
 pip install flask mysql-connector-python
+
+---
 
 3️⃣ Configure MySQL
 CREATE DATABASE library;
@@ -69,6 +59,7 @@ def connect_db():
         database="library"
     )
 
+---
 
 4️⃣ Run the application
 python app.py
