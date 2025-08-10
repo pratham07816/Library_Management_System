@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Library Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="/static/logo.jpg" alt="logo" class="logo">
+        <h2>My Library</h2>
+      </div>
+      <nav>
+        <button class="nav-btn active" data-page="dashboard">Dashboard</button>
+        <button class="nav-btn" data-page="add">Add Book</button>
+        <button class="nav-btn" data-page="issue">Issue Book</button>
+        <button class="nav-btn" data-page="return">Return Book</button>
+        <button class="nav-btn" data-page="delete">Delete Book</button>
+        <button class="nav-btn" data-page="view">View Books</button>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <h1 id="page-title">Dashboard</h1>
+        <div class="search">
+          <input id="searchBox" placeholder="Search book code or name...">
+          <button id="refreshBtn">⟳</button>
+        </div>
+      </header>
+
+      <section id="dashboard" class="page active">
+        <div class="cards">
+          <div class="card">
+            <h3>Total Books</h3>
+            <p id="totalBooks">0</p>
+          </div>
+          <div class="card">
+            <h3>Issued Books</h3>
+            <p id="issuedBooks">0</p>
+          </div>
+          <div class="card">
+            <h3>Returned Today</h3>
+            <p id="returnedBooks">0</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="panel timeline-panel">
+            <h3>Activity Timeline</h3>
+            <ul id="timelineList" class="timeline"></ul>
+          </div>
+
+          <div class="panel books-panel">
+            <h3>Quick Books Preview</h3>
+            <table class="mini-table">
+              <thead><tr><th>Code</th><th>Book</th><th>Copies</th></tr></thead>
+              <tbody id="booksPreview"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add Book -->
+      <section id="add" class="page">
+        <h2>Add New Book</h2>
+        <form id="addForm" class="form">
+          <input name="book_name" placeholder="Book Name" required>
+          <input name="bcode" placeholder="Book Code" required>
+          <input name="total" type="number" min="0" placeholder="Total Copies" required>
+          <input name="subject" placeholder="Subject">
+          <button type="submit">Add Book</button>
+        </form>
+      </section>
+
+      <!-- Issue Book -->
+      <section id="issue" class="page">
+        <h2>Issue Book</h2>
+        <form id="issueForm" class="form">
+          <input name="reg_no" placeholder="Student Reg No" required>
+          <input name="student_name" placeholder="Student Name" required>
+          <input name="bcode" placeholder="Book Code" required>
+          <button type="submit">Issue Book</button>
+        </form>
+      </section>
+
+      <!-- Return Book -->
+      <section id="return" class="page">
+        <h2>Return Book</h2>
+        <form id="returnForm" class="form">
+          <input name="bcode" placeholder="Book Code" required>
+          <button type="submit">Return Book</button>
+        </form>
+      </section>
+
+      <!-- Delete Book -->
+      <section id="delete" class="page">
+        <h2>Delete Book</h2>
+        <form id="deleteForm" class="form">
+          <input name="bcode" placeholder="Book Code" required>
+          <button type="submit">Delete Book</button>
+        </form>
+      </section>
+
+      <!-- View Books -->
+      <section id="view" class="page">
+        <h2>All Books</h2>
+        <table class="full-table">
+          <thead>
+            <tr><th>No.</th><th>Book Name</th><th>Code</th><th>Copies</th><th>Subject</th></tr>
+          </thead>
+          <tbody id="booksTable"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
